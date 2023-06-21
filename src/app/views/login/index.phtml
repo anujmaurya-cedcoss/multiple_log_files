@@ -1,0 +1,18 @@
+<h2>Log up using this form</h2>
+<?php echo $this->tag->form("login/login"); ?>
+<p>
+    <label for="email">E-Mail</label>
+    <?php echo $this->tag->textField(["email", 'value' =>(string)$this->cookies->get('email')])?>
+</p>
+<p>
+    <label for="password">Password</label>
+    <?php echo $this->tag->textField(["password", 'value'=>(string)$this->cookies->get('password')]); ?>
+</p>
+<input type="checkbox" id="remember" name="remember" value="Remember Me!">
+<label for="remember"> Remember Me!</label>
+<p>
+    <?php echo $this->tag->submitButton("Log In"); ?>
+</p>
+</form>
+<?php echo $this->tag->linkTo('signup', 'Sign Up Instead');?>
+
